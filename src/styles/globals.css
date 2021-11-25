@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .bg-animate-right{
+    @apply  text-primary transition-all duration-500 ease-out bg-right-bottom;
+} */
+
+
+.bg-animate-right {
+    background: linear-gradient(to right, black 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+      }
+
+      .bg-animate-right:hover{
+        background-position: left bottom;
+
+    }
+
+/* @variants hover{
+    .bg-animate-right:hover{
+        background-position: left bottom;
+
+    }
+} */
+

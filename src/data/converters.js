@@ -1,0 +1,1 @@
+export const excelConverters = { path: { prefix: "/excel", suffix: ["dbs", "pdf", "csv"] } }
