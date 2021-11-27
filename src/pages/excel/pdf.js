@@ -1,14 +1,12 @@
 import React from 'react'
-import Layout from "../../components/layout"
 import Link from 'next/link'
+import PdfPage from "../../components/pages/excel/PdfPage"
 
 function ExcelToPdf() {
     return (
-        <Layout>
-            <div className="flex flex-col gap-10">
-                pdf
-
-            </div>        </Layout>
+        <>
+         <PdfPage />       
+		</>
     )
 }
 

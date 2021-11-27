@@ -16,7 +16,8 @@ export default function Home() {
       </Head>
       <div className=" h-screen ">
         <h1>Hello</h1>
-        <FileUpload />
+		<FileUpload />
+<FileRenderer	file={a}></FileRenderer>
       </div>
     </>
   );

@@ -4,7 +4,9 @@ import AppContext from "../context/appContext";
 import Layout from "../components/layout";
 
 function MyApp({ Component, pageProps }) {
-  let { appState, setAppState } = useState({
+	
+	
+  let [ appState, setAppState ] = useState({
     files: []
   });
 

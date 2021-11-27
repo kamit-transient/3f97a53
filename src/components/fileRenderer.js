@@ -143,12 +143,17 @@ export default function FileRenderer({ file }) {
 
     return (
       <>
-        <div className="flex flex-col  ">
+        <div className="flex flex-col justify-center  ">
           <div>
             <IconCom size="3rem" color="#eee" />
           </div>
-          <div className="text-gray-100 font-bold tracking-wide text-lg">
-            {name}({prettyBytes(rawSize)})
+          <div className="flex flex-col items-center text-gray-100 font-bold tracking-wide text-lg">
+           <div>
+			    {name}
+			  </div>
+			  <div className="text-sm font-normal">
+			  ({prettyBytes(rawSize)})
+			  </div>
           </div>
         </div>
       </>
