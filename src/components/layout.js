@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <div className="pt-24">
+      <div className="pt-24 font-body">
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
