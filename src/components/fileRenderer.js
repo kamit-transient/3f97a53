@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { MdAudiotrack } from 'react-icons/md';
 import { DiAndroid } from 'react-icons/di';
 import { AiFillFileZip } from 'react-icons/ai';
@@ -14,6 +14,8 @@ import { SiJson, SiMicrosoftpowerpoint, SiMicrosoftexcel, SiSvg } from 'react-ic
 import prettyBytes from 'pretty-bytes';
 import AppContext from '../context/appContext';
 import Converters from '../data/converters';
+import { useRouter } from 'next/router';
+
 
 export default function FileRenderer({ file }) {
     let name = file.name;
@@ -21,8 +23,9 @@ export default function FileRenderer({ file }) {
     let fileExt = name.substring(name.lastIndexOf('.') + 1).toLowerCase();
     let pathPrefix = '';
     let { appState, setAppState } = useContext(AppContext);
+	let router=useRouter();
 
-    console.log('fileExt:', fileExt);
+
     let getIcon = () => {
         let IconCom = null;
         //Thanks to https://github.com/react-file-type-icons/react-file-type-icons/blob/master/icons/IconsData/index.js
@@ -144,7 +147,8 @@ export default function FileRenderer({ file }) {
         }
 		
 		if(pathPrefix != appState.pathPrefix){
-			setAppState(Object.assign({},...appState.pathPrefix,pathPrefix:pathPrefix));
+			setAppState(Object.assign({},{...appState.pathPrefix,pathPrefix:pathPrefix}));
+			// router.push(`/?prefix=${pathPrefix}`,`/${pathPrefix}`,{shallow:true});
 		}
 
         return (

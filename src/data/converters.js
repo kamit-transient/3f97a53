@@ -8,9 +8,9 @@ export default {
         name: 'Excel',
         prefix: 'excel',
         children: [
-            { name: 'dbs', prefix: 'dbs', implemented: yes },
-            { name: 'pdf', prefix: 'pdf', implemented: yes },
-            { name: 'csv', prefix: 'csv', implemented: yes },
+            { name: 'dbs', prefix: 'dbs', implemented: "yes" },
+            { name: 'pdf', prefix: 'pdf', implemented: "yes" },
+            { name: 'csv', prefix: 'csv', implemented: "yes" },
         ],
     },
     audio: {
