@@ -1,11 +1,11 @@
 import React from 'react'
-import ExcelPage from "../../components/pages/excel/excelPage"
+import ImagePage from "../../components/pages/image/imagePage"
 import Link from 'next/link'
 
 export default function Excel() {
     return (
         <>
-          <ExcelPage />      
+          <ImagePage />      
 		</>
     )
 }

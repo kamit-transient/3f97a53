@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Modal from 'react-modal';
 import Converters from '../data/converters';
 import ExcelPage from "./pages/excel/excelPage";
+import ImagePage from "./pages/image/imagePage";
 
 export default function FileUpload() {
     const router = useRouter();
@@ -27,14 +28,16 @@ export default function FileUpload() {
             //     break;
             // case Converters.video.prefix:
             //     break;
-            // case Converters.image.prefix:
-            //     break;
+            case Converters.image.prefix:
+				DecidedComponent=ImagePage;
+
+                break;
             // case Converters.document.prefix:
             //     break;
             // case Converters.ppt.prefix:
             //     break;
             case Converters.excel.prefix:
-				DecidedComponent=ExcelPage
+				DecidedComponent=ExcelPage;
                 break;
             // case Converters.db.prefix:
             //     break;
