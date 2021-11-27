@@ -142,6 +142,10 @@ export default function FileRenderer({ file }) {
             default:
                 IconCom = GrDocumentVerified;
         }
+		
+		if(pathPrefix != appState.pathPrefix){
+			setAppState(Object.assign({},...appState.pathPrefix,pathPrefix:pathPrefix));
+		}
 
         return (
             <>
