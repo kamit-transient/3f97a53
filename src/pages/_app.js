@@ -7,7 +7,8 @@ function MyApp({ Component, pageProps }) {
 	
 	
   let [ appState, setAppState ] = useState({
-    files: []
+    files: [],
+	  prefix:""
   });
 
   return (

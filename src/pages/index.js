@@ -3,6 +3,10 @@ import React, { useCallback, useContext } from "react";
 import AppContext from "../context/appContext";
 import FileUpload from "../components/fileUpload";
 import FileRenderer from "../components/fileRenderer";
+import { useRouter } from 'next/router'
+import Modal from 'react-modal'
+
+
 
 export default function Home() {
   let a = { name: "abc.xlsx", size: 4044 };

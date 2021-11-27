@@ -17,11 +17,18 @@ import {
   SiSvg
 } from "react-icons/si";
 import prettyBytes from "pretty-bytes";
+import AppContext from "../context/appContext";
+
 
 export default function FileRenderer({ file }) {
   let name = file.name;
   let rawSize = file.size;
   let fileExt = name.substring(name.lastIndexOf(".") + 1).toLowerCase();
+	let pathPrefix="";
+  let { appState, setAppState } = useContext(AppContext);
+
+	
+	
   console.log("fileExt:", fileExt);
   let getIcon = () => {
     let IconCom = null;
@@ -38,88 +45,9 @@ export default function FileRenderer({ file }) {
       case "midi":
       case "wpl":
         IconCom = MdAudiotrack;
+		pathPrefix="audio";
         break;
-
-      case "apk":
-        IconCom = DiAndroid;
-        break;
-
-      case "7z":
-      case "arj":
-      case "deb":
-      case "pkg":
-      case "rar":
-      case "rpm":
-      case "z":
-      case "zip":
-        IconCom = AiFillFileZip;
-        break;
-
-      case "sql":
-      case "csv":
-      case "db":
-      case "dbf":
-      case "dbs":
-      case "log":
-      case "mdb":
-      case "sav":
-      case "tar":
-      case "xml":
-      case "dat":
-        IconCom = FaDatabase;
-        break;
-
-      case "doc":
-      case "docx":
-      case "odt":
-        IconCom = GrDocumentWord;
-        break;
-
-      case "rtf":
-      case "wpd":
-      case "tex":
-      case "txt":
-        IconCom = GrDocument;
-        break;
-      case "png":
-      case "jpeg":
-      case "jpg":
-      case "gif":
-      case "exif":
-      case "tiff":
-      case "tif":
-      case "bmp":
-        IconCom = GrDocumentImage;
-        break;
-
-      case "json":
-        IconCom = SiJson;
-        break;
-
-      case "pdf":
-        IconCom = GrDocumentPdf;
-        break;
-
-      case "ppt":
-      case "pptx":
-      case "key":
-      case "odp":
-      case "pps":
-        IconCom = SiMicrosoftpowerpoint;
-        break;
-
-      case "xlsx":
-      case "xlsm":
-      case "xls":
-      case "ods":
-        IconCom = SiMicrosoftexcel;
-        break;
-
-      case "svg":
-        IconCom = SiSvg;
-        break;
-
-      case "mp4":
+	  case "mp4":
       case "avi":
       case "flv":
       case "mov":
@@ -135,7 +63,78 @@ export default function FileRenderer({ file }) {
       case "vob":
       case "wmv":
         IconCom = FaRegFileVideo;
+		pathPrefix="video";
         break;
+	  case "png":
+      case "jpeg":
+      case "jpg":
+      case "gif":
+      case "exif":
+      case "tiff":
+      case "tif":
+      case "bmp":
+        IconCom = GrDocumentImage;
+		athPrefix="image";
+        break;
+			
+	  case "doc":
+      case "docx":
+      case "odt":
+        IconCom = GrDocumentWord;
+        break;
+	  case "ppt":
+      case "pptx":
+      case "key":
+      case "odp":
+      case "pps":
+        IconCom = SiMicrosoftpowerpoint;
+        break;
+
+      case "xlsx":
+      case "xlsm":
+      case "xls":
+      case "ods":
+	  case "csv":
+        IconCom = SiMicrosoftexcel;
+        break;
+      case "sql":
+      case "db":
+      case "dbf":
+      case "dbs":
+      case "mdb":
+      case "sav":
+      case "dat":
+        IconCom = FaDatabase;
+		pathPrefix="db";
+
+        break;
+
+      
+
+      case "rtf":
+      case "wpd":
+      case "tex":
+      case "txt":
+        IconCom = GrDocument;
+        break;
+      case "xml":
+		IconCom = GrDocument;
+        break;
+      case "json":
+        IconCom = SiJson;
+        break;
+
+      case "pdf":
+        IconCom = GrDocumentPdf;
+        break;
+
+      
+
+      case "svg":
+        IconCom = SiSvg;
+        break;
+
+      
 
       default:
         IconCom = GrDocumentVerified;

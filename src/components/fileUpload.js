@@ -2,11 +2,14 @@ import React, { Fragment, useCallback, useState, useContext } from "react";
 import { useDropzone } from "react-dropzone";
 import FileRenderer from "./fileRenderer";
 import AppContext from "../context/appContext";
+import { useRouter } from 'next/router'
+import Modal from 'react-modal'
+
 
 export default function FileUpload() {
-  // const [state, setState] = useState({
-  //   files: []
-  // });
+
+	
+	const router=useRouter();
 
   let { appState, setAppState } = useContext(AppContext);
 
@@ -39,6 +42,14 @@ export default function FileUpload() {
           return <FileRenderer file={file} />;
         })}
       </div>
+		  
+		     <Modal
+        isOpen={!!router.query.prefix}
+        onRequestClose={() => router.push('/')}
+        contentLabel="Post modal"
+      >
+        <Post id={router.query.postId} pathname={router.pathname} />
+      </Modal>
     </Fragment>
   );
 }
