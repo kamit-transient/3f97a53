@@ -13,9 +13,9 @@ export default function FileRenderer({ file }) {
 	let { appState, setAppState } = useContext(AppContext);
 	let router = useRouter();
 
-	useEffect(() => {
-		setAppState(Object.assign({}, { ...appState, pathPrefix: pathPrefix }));
-	}, [pathPrefix]);
+	// useEffect(() => {
+	// 	setAppState(Object.assign({}, { ...appState, pathPrefix: pathPrefix }));
+	// }, [pathPrefix]);
 
 	let getIcon = () => {
 		

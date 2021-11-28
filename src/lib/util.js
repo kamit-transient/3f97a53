@@ -11,7 +11,8 @@ import {
 } from 'react-icons/gr';
 import { SiJson, SiMicrosoftpowerpoint, SiMicrosoftexcel, SiSvg } from 'react-icons/si';
 import Converters from '../data/converters';
-
+import ExcelPage from '../components/pages/excel/excelPage';
+import ImagePage from '../components/pages/image/imagePage';
 
 
 export function formatDate(dateStr) {
@@ -34,8 +35,8 @@ export function formatDate(dateStr) {
 }
 
 export function getDependentsFromExt(fileExt) {
-	let IconCom = '';
-	let pathPrefix = '';
+	let IconCom = null;
+	let pathPrefix = null;
 
 	//Thanks to https://github.com/react-file-type-icons/react-file-type-icons/blob/master/icons/IconsData/index.js
 
@@ -165,3 +166,39 @@ export function getDependentsFromExt(fileExt) {
 export function getExtFromName(name) {
 	return name.substring(name.lastIndexOf('.') + 1).toLowerCase();
 }
+
+export function  getComponentTobeRenderd (routerQueryPrefix) {
+		let DecidedComponent = '';
+		let path = '';
+		switch (routerQueryPrefix) {
+			// case Converters.audio.prefix:
+			//     break;
+			// case Converters.video.prefix:
+			//     break;
+			case Converters.image.prefix:
+				DecidedComponent = ImagePage;
+
+				break;
+			// case Converters.document.prefix:
+			//     break;
+			// case Converters.ppt.prefix:
+			//     break;
+			case Converters.excel.prefix:
+				DecidedComponent = ExcelPage;
+				break;
+			// case Converters.db.prefix:
+			//     break;
+			// case Converters.document.prefix:
+			//     break;
+			// case Converters.xml.prefix:
+			//     break;
+			// case Converters.json.prefix:
+			//     break;
+			// case Converters.pdf.prefix:
+			//     break;
+			// case Converters.svg.prefix:
+			//     break;
+		}
+
+		return <DecidedComponent />;
+	};

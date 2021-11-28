@@ -9,15 +9,15 @@ export default function ExcelPage() {
 	useEffect(() => {}, []);
 
 	return (
-		<>
+		<div className="container mx-auto">
 			<div className="flex flex-col gap-10">
 				<div>
 					{appState.files.map((file) => {
 						return <FileRenderer file={file} key={file.name} />;
 					})}
 				</div>
-				Excel
+				
 			</div>{' '}
-		</>
+		</div>
 	);
 }

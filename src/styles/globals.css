@@ -29,11 +29,7 @@
 /* absolute top-16 left-10 right-10 bottom-10 shadow-xl scroll-y-auto bg-white bg-gray-200 z-20 */
   .Modal {
     position: absolute;
-    top: 40px;
-    left: 40px;
-    right: 40px;
-    bottom: 40px;
-    background-color: papayawhip;
+	@apply bg-blue-50 top-16 sm:left-10 left-1 sm:right-10 right-1 bottom-auto shadow-xl overflow-y-auto z-20 ;
   }
 
   .Overlay {
@@ -42,6 +38,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rebeccapurple;
+	  background-color:rgba(0,0,0,.8);
   }
 
