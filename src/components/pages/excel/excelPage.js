@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import Link from 'next/link';
 import AppContext from '../../../context/appContext';
+import FileRenderer from "../../fileRenderer";
 
 export default function ExcelPage() {
 	let { appState, setAppState } = useContext(AppContext);
