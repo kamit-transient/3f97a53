@@ -25,9 +25,9 @@ export default function FileRenderer({ file }) {
 
 		return (
 			<>
-				<div className="flex flex-col justify-center h-28 w-28 items-center ">
-					<div>
-						<IconCom size="3rem" color="#eee" />
+				<div className="flex flex-col justify-center items-center h-28 w-28">
+					<div className="text-gray-50">
+						<IconCom size="3rem" color="white"  />
 					</div>
 					<div className="flex flex-col items-center text-gray-100 font-bold tracking-wide text-lg text-center h-28 w-28">
 						<div className="w-full leading-tight" style={{overflowWrap:'break-word'}}>{name}</div>
@@ -40,7 +40,7 @@ export default function FileRenderer({ file }) {
 
 	return (
 		<div>
-			<div className="rounded-full border-8 border-primary inline-flex p-5 bg-primary">
+			<div className="rounded-full border-8 border-gray-900 inline-flex p-5 bg-gray-900">
 				{getIcon()}
 			</div>
 		</div>

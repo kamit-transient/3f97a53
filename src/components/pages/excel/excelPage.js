@@ -9,7 +9,7 @@ import {useSpring, animated,config } from "@react-spring/web"
 export default function ExcelPage() {
 	let { appState, setAppState } = useContext(AppContext);
 	let animatedStyle= useSpring({
-		from:{transform:"translateY(-1200px) scale(0)"},
+		from:{transform:"translateY(-50%) scale(0)"},
 		to:{transform:"translateY(0px) scale(1)"},
 		 delay: 200,
     config: config.molasses,
@@ -22,13 +22,13 @@ export default function ExcelPage() {
 	useEffect(() => {}, []);
 	
 	let file={
-		name:"ammmm",
+		name:"ammmm.xls",
 		size:121212
 	}
 
 	return (
 		<div className="container mx-auto py-14">
-			<div className="flex flex-col items-center justify-center gap-10">
+			<div className="flex flex-col items-center gap-10 min-h-screen ">
 				<div>
 					{appState.files && appState.files.map((file) => {
 						return <FileRenderer file={file} key={file.name} />;
@@ -40,7 +40,7 @@ export default function ExcelPage() {
 				{
 					formatsToBeConverted &&	formatsToBeConverted.map(f=>{
 							return(
-									<div key={f.prefix} className="bg-primary text-white font-heading tracking-wide cursor-pointer px-6 py-3  rounded-md uppercase text-3xl ">
+									<div key={f.prefix} className="bg-gray-800 text-white font-heading tracking-wide cursor-pointer px-6 py-3  rounded-md uppercase text-3xl ">
 										{f.name}
 									</div>
 							)
