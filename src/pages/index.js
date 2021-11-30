@@ -1,17 +1,21 @@
 import Head from 'next/head';
-import React, { useCallback, useContext ,useEffect} from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import AppContext from '../context/appContext';
 import FileUpload from '../components/fileUpload';
 import FileRenderer from '../components/fileRenderer';
-import AppModal from "../components/appModal"
+import AppModal from '../components/appModal';
 import { getDependentsFromExt, getExtFromName, getComponentTobeRenderd } from '../lib/util';
-
+import {useSpring, animated,config } from "@react-spring/web"
 
 export default function Home() {
 	let a = { name: 'abc.xlsx', size: 4044 };
 	let { appState, setAppState } = useContext(AppContext);
-
-	
+		let animatedStyle= useSpring({
+		from:{width:'0px'},
+		to:{width:'100%'},
+		 delay: 200,
+    config: config.molasses,
+	})
 
 	return (
 		<>
@@ -21,17 +25,20 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<div className=" container mx-auto">
+			<div className="min-h-screen">
 				<div className="text-center">
-					<h1 className="font-bold font-heading text-7xl bg-primary text-white inline-block mb-1 p-2">
-						Just 6 Seconds.
+					<h1 className="font-bold font-heading text-5xl sm:text-7xl text-gray-800 inline-block mb-1 p-2 mb-3">
+						OMG Converter
 					</h1>
-					<h2 className="text-4xl font-bold font-body">
-						Simply Select your file to Convert.
-					</h2>
+					<div>
+						<h2 className="text-3xl sm:text-4xl font-bold font-body leading-relaxed inline-flex bg-gray-800 text-white px-3 rounded-sm">
+							Modern & Smart Converter{' '}
+						</h2>
+					</div>
 				</div>
 				<FileUpload />
 				<AppModal />
-				
+			</div>
 			</div>
 		</>
 	);

@@ -88,20 +88,24 @@ export default function FileUpload() {
 
 	return (
 		<Fragment>
+			<div className="">
+			
+			
 			<div
 				{...getRootProps()}
-				className={` mt-20 border-4 border-dashed  h-80 flex justify-center items-center rounded-md ${
-					!isDragActive ? 'border-gray-300' : 'border-primary'
+				className={` mt-20 border-4 border-dashed  h-80 p-5 flex flex-col justify-center items-center rounded-md ${
+					!isDragActive ? 'border-gray-400' : 'border-primary'
 				}`}
 			>
 				<input {...getInputProps()} />
 				{isDragActive ? (
-					<p className="text-primary">Drop the files here ...</p>
-				) : (
-					<p>Drag n drop some files here, or click to select files</p>
+					<p className="text-primary tracking-wide text-opacity-40 text-4xl">Drop the files here ...</p>
+				) : (<>
+					 <p className="text-gray-200 tracking-wide text-xl sm:text-2xl leading mb-4">You can Convert <span className="font-bold"> Excel, ppt, images, audio, video</span> files etc.</p>
+					<p className="text-gray-300 tracking-wide text-2xl sm:text-4xl">Drag n drop some files here, or click to select files</p> </>
 				)}
 			</div>
-	
+	</div>
 		</Fragment>
 	);
 }
